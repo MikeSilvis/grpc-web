@@ -42,21 +42,21 @@ export function DefaultTransportFactory(transportOptions: TransportOptions): Tra
 }
 
 function detectTransport(): TransportConstructor {
-  if (detectFetchSupport()) {
+  // if (detectFetchSupport()) {
     return fetchRequest;
-  }
+  // }
 
-  if (detectMozXHRSupport()) {
-    return mozXhrRequest;
-  }
+  // if (detectMozXHRSupport()) {
+  //   return mozXhrRequest;
+  // }
 
-  if (detectXHRSupport()) {
-    return xhrRequest;
-  }
+  // if (detectXHRSupport()) {
+  //   return xhrRequest;
+  // }
 
-  if (detectNodeHTTPSupport()) {
-    return httpNodeRequest;
-  }
+  // if (detectNodeHTTPSupport()) {
+  //   return httpNodeRequest;
+  // }
 
   throw new Error("No suitable transport found for gRPC-Web");
 }
